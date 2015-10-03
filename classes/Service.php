@@ -85,5 +85,27 @@ class Services{
 		return $this->db->getOne ('registrations');
 	}
 
+	public function getStudentById($id){
+		$this->db->where('id', $id);
+		return $this->db->getOne('registrations');
+	}
+
+	public function getInWords($number){
+		switch ($number) {
+			case '700':
+				return 'সাতশত টাকা মাত্র';
+				break;
+			case '900':
+				return 'নয়শত টাকা মাত্র';
+				break;
+			case '1100':
+				return 'এক হাজার একশত টাকা মাত্র';
+				break;
+			default:
+				return 'পাঁচশত টাকা মাত্র';
+				break;
+		}
+	}
+
 	
 }

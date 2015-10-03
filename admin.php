@@ -10,31 +10,30 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th class="print-hide">#</th>
+            <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Transaction ID</th>
             <th>Payment source</th>
             <th>Amount</th>
             <th>Guests</th>
-            <th>Action</th>
+            <th class="print-hide">Action</th>
           </tr>
         </thead>
         <tbody>
-            <?php foreach($service->getRegisteredStudents() as $student){ // echo '<pre>'; print_r($student); ?>
+            <?php foreach($service->getRegisteredStudents() as $student){ ?>
             <tr>
-              <th scope="row"><img src="uploads/<?php echo ($student['image_url']) ? $student['image_url'] : 'default.jpg'; ?>" alt="image" class="avatar"></th>
-              <td><?php echo $student['first_name']; ?></td>
-              <td><?php echo $student['last_name']; ?></td>
+              <th scope="row" class="print-hide"><img src="uploads/<?php echo ($student['image_url']) ? $student['image_url'] : 'default.jpg'; ?>" alt="image" class="avatar"></th>
+              <td><?php echo $student['first_name'] .' '.$student['last_name']; ?></td>
               <td><?php echo $student['email_address']; ?></td>
               <td><?php echo $student['contact_number']; ?></td>
               <td><?php echo $student['transaction_id']; ?></td>
               <td><?php echo $student['payment_source']; ?></td>
               <td><?php echo $student['amount']; ?></td>
               <td><?php echo $student['guest_number']; ?></td>
-              <td>
+              <td class="print-hide">
+                <a href="details.php?id=<?php echo $student['id']; ?>" class="btn btn-info btn-xs">Details</a>
                 <?php if($student['is_verified'] === 'Yes'){ ?>
                   <button type="button" class="btn btn-success btn-xs" disabled="disabled">Verified</button>
                 <?php }else{ ?>

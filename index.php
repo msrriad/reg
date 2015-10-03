@@ -132,7 +132,7 @@
 
                 <div class="form-group">
                   <label for="amount">Amount</label>
-                  <input type="number" name="amount" min="500" class="form-control" id="amount" placeholder="500" tabindex="15" required="" autofocus="">
+                  <input type="number" name="amount" min="500" class="form-control" id="amount" value="500" placeholder="500" tabindex="15" required="" autofocus="">
                 </div>
 
                 <div class="form-group">
