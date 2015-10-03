@@ -13,7 +13,10 @@
 
                 <div class="recipt-header">
                   <div class="row">
-                    <div class="col-xs-3">Logo</div>
+                    <div class="col-xs-3">
+                      <img src="images/logo.png" alt="logo"><br/><br/><br/><br/>
+                      <strong>নিবন্ধন নং -</strong> <?php echo $student['id']; ?>
+                    </div>
                     <div class="col-xs-6">
                       <div class="school-name">
                         <span>আল্লাহ্‌ সর্বশক্তিমান</span><br/>
@@ -24,7 +27,10 @@
                         <span class="location">ঈশ্বরগঞ্জ, ময়মনসিংহ</span>
                       </div>
                     </div>
-                    <div class="col-xs-3">Logo</div>
+                    <div class="col-xs-3">
+                      <br/><br/><br/><br/><br/><br/><br/>
+                      তারিখ - <?php echo @date('jS, m, Y', $student['created_at']); ?>
+                    </div>
                   </div>
                 </div>
 
